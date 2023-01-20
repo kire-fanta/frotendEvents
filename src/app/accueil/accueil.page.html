@@ -1,0 +1,134 @@
+<ion-header>
+  <div class="image">
+    <img src="../assets/IMAGE/ok.png" alt="" />
+  </div>
+
+  <ion-toolbar class="search">
+    <ion-searchbar></ion-searchbar>
+    <ion-button class="butonevents"> Créer un évenements</ion-button>
+  </ion-toolbar>
+
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="upcoming">
+      Evénements à venir
+    </ion-segment-button>
+    <ion-segment-button value="past"> Evénements passés </ion-segment-button>
+    <ion-segment-button value="all"> Tous les événements </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<!--
+  segment ionique(events encous,passes,terminer)
+
+
+
+
+  
+
+-->
+
+<ion-content>
+  <!-- <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="upcoming">
+      Evénements à venir dfhtrdt
+    </ion-segment-button>
+    <ion-segment-button value="current"> Evénements en cours </ion-segment-button>
+    <ion-segment-button value="past"> Evénements passés rsydtfyyyyyyyyyyyyyyyyyyyyyy</ion-segment-button>
+  </ion-segment> -->
+
+  <ion-card *ngFor="let event of upcomingEvents">
+    <ion-card-header>
+      <ion-card-title>{{event.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>description de l'événement : {{event.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let event of pastEvents">
+    <ion-card-header>
+      <ion-card-title>{{event.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>description de l'événement : {{event.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let event of pastEvents">
+    <ion-card-header>
+      <ion-card-title>{{event.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>description de l'événement : {{event.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- 
+<ion-toolbar>
+  <ion-title> Segment Example </ion-title>
+</ion-toolbar> -->
+
+<!-- <ion-content>
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'upcoming'">
+      <ion-list>
+        <ion-item *ngFor="let event of upcomingEvents">{{event}}</ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'past'">
+      <ion-list>
+        <ion-item *ngFor="let event of pastEvents">{{event}}</ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'all'">
+      <ion-list>
+        <ion-item *ngFor="let event of allEvents">{{event}}</ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content> -->
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Footer
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule">
+      <ion-icon name="home" aria-hidden="true"></ion-icon>
+      <ion-label>Accueil</ion-label>
+      <!-- <ion-badge>6</ion-badge>-->
+    </ion-tab-button>
+
+    <ion-tab-button tab="home">
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
+
+      <ion-label>Evenément</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="300%"
+        height="23"
+        fill="currentColor"
+        class="bi bi-bank"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"
+        />
+      </svg>
+      <ion-label>Salles</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
+      <ion-label>Budget</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,7 @@
+{
+  "name": "FrontentEvents",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
